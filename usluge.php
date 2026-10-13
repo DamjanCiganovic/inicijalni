@@ -1,6 +1,6 @@
 <?php
 $naslovStranice = "Usluge";
-include 'dijelovi/zaglavlje.php';
+include 'zaglavlje.php';
 ?>
 <!DOCTYPE html>
 <!-- TSD-4RT | AB | 22.09.2026. -->
@@ -251,4 +251,4 @@ $usluge = [
 
 </body>
 </html>
-<?php include 'dijelovi/podnozje.php'; ?>
+<?php include 'podnozje.php'; ?>

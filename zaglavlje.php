@@ -13,16 +13,23 @@
 </head>
 <body>
 
-<header>
-    <h1>Aegis Security</h1>
+<header class="main-header">
+    <div class="header-container">
 
-    <nav>
-        <a href="index.php">Početna</a>
-        <a href="o-nama.html">O-nama</a>
-        <a href="usluge.php">Usluge</a>
-        <a href="kontakt.php">Kontakt</a>
-        <a href="blog.html">Blog</a>
-    </nav>
+        <a href="index.php" class="logo">
+            <i class="fas fa-shield-alt"></i>
+            <span>Aegis Security</span>
+        </a>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.php">Početna</a></li>
+                <li><a href="o-nama.html">O nama</a></li>
+                <li><a href="usluge.php">Usluge</a></li>
+                <li><a href="kontakt.php">Kontakt</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+
+    </div>
 </header>
-
-<main>

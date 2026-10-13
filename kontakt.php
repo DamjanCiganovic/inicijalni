@@ -1,7 +1,7 @@
 <?php
 // TSD-4RT | inicijali | datum
 $naslovStranice = "Kontakt";
-include 'dijelovi/zaglavlje.php';
+include 'zaglavlje.php';
 ?>
 <!DOCTYPE html>
 <!-- TSD-4RT | AB | 22.09.2026. -->
@@ -15,23 +15,7 @@ include 'dijelovi/zaglavlje.php';
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="header-container">
-            <a href="index.html" class="logo">
-                <i class="fas fa-shield-halved"></i>
-                <span>Aegis Security</span>
-            </a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Početna</a></li>
-                    <li><a href="o-nama.html">O nama</a></li>
-                    <li><a href="usluge.html">Usluge i Cjenik</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="kontakt.html" class="active">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+
 
     <main class="main-content">
         <section class="section">
@@ -128,4 +112,4 @@ include 'dijelovi/zaglavlje.php';
 
 </body>
 </html>
-<?php include 'dijelovi/podnozje.php'; ?>
+<?php include 'podnozje.php'; ?>
