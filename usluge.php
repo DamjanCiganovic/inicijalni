@@ -1,3 +1,7 @@
+<?php
+$naslovStranice = "Usluge";
+include 'dijelovi/zaglavlje.php';
+?>
 <!DOCTYPE html>
 <!-- TSD-4RT | AB | 22.09.2026. -->
 <html lang="hr">
@@ -197,6 +201,23 @@
                     <p>Proaktivna zaštita i savjetovanje u informacijskoj sigurnosti za moderno poslovanje.</p>
                 </div>
 
+                <?php
+$usluge = [
+    "Zaštita objekata" => 150,
+    "Video nadzor" => 200,
+    "Alarmni sustavi" => 100
+];
+?>
+
+<ul>
+    <?php foreach ($usluge as $naziv => $cijena): ?>
+        <li>
+            <?= htmlspecialchars($naziv) ?> -
+            <?= $cijena ?> €
+        </li>
+    <?php endforeach; ?>
+</ul>
+
                 <div class="footer-links">
                     <div class="footer-col">
                         <span class="footer-heading">Navigacija</span>
@@ -230,3 +251,4 @@
 
 </body>
 </html>
+<?php include 'dijelovi/podnozje.php'; ?>

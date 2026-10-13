@@ -1,3 +1,8 @@
+<?php
+// TSD-4RT | inicijali | datum
+$naslovStranice = "Kontakt";
+include 'dijelovi/zaglavlje.php';
+?>
 <!DOCTYPE html>
 <!-- TSD-4RT | AB | 22.09.2026. -->
 <html lang="hr">
@@ -123,3 +128,4 @@
 
 </body>
 </html>
+<?php include 'dijelovi/podnozje.php'; ?>
