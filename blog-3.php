@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- TSD-4RT | AB | 22.09.2026. -->
+<!-- TSD-4RT | DC | 22.09.2026. -->
 <html lang="hr">
 <head>
     <meta charset="UTF-8">
@@ -10,23 +10,11 @@
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="header-container">
-            <div class="logo">
-                <i class="fas fa-shield-halved"></i>
-                <span>Aegis Security</span>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Početna</a></li>
-                    <li><a href="o-nama.html">O nama</a></li>
-                    <li><a href="usluge.html">Usluge i Cjenik</a></li>
-                    <li><a href="blog.html" class="active">Blog</a></li>
-                    <li><a href="kontakt.html">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<?php
+// TSD-4RT | DC | 20.10.2026
+$naslovStranice = "Kontakt";
+include 'zaglavlje.php';
+?>
 
     <main class="main-content">
         <article class="article-container">
@@ -55,40 +43,7 @@
         </article>
     </main>
 
-    <footer class="main-footer">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <div class="logo"><i class="fas fa-shield-halved"></i> Aegis Security</div>
-                <p>Vaš pouzdan partner u informacijskoj sigurnosti.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Pravne Informacije</h4>
-                <ul>
-                    <li><a href="#">Politika privatnosti</a></li>
-                    <li><a href="#">Uvjeti korištenja</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Pratite Nas</h4>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-x-twitter"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Newsletter</h4>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Vaš e-mail" required>
-                    <button type="submit">Prijava</button>
-                </form>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Aegis Security d.o.o. Sva prava pridržana.</p>
-        </div>
-    </footer>
+    <?php include 'podnozje.php'; ?>
 
     <script src="script.js"></script>
 </body>

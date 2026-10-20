@@ -1,5 +1,5 @@
 <?php
-// TSD-4RT | inicijali | datum
+//TSD-4RT | DC | 22.09.2026. 
 // Jednostavni komentar
 echo "Dobro došli na stranicu.";
 echo "<br>";

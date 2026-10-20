@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- TSD-4RT | AB | 22.09.2026. -->
+<!-- TSD-4RT | DC | 22.09.2026. -->
 <html lang="hr">
 <head>
     <meta charset="UTF-8">
@@ -10,23 +10,11 @@
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="header-container">
-            <div class="logo">
-                <i class="fas fa-shield-halved"></i>
-                <span>Aegis Security</span>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Početna</a></li>
-                    <li><a href="o-nama.html">O nama</a></li>
-                    <li><a href="usluge.html">Usluge i Cjenik</a></li>
-                    <li><a href="blog.html" class="active">Blog</a></li>
-                    <li><a href="kontakt.html">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<?php
+// TSD-4RT | DC | 20.10.2026
+$naslovStranice = "Kontakt";
+include 'zaglavlje.php';
+?>
 
     <main class="main-content">
         <article class="article-container">

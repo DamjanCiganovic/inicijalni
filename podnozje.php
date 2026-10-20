@@ -1,5 +1,5 @@
 <?php
-// TSD-4RT | inicijali | datum
+// TSD-4RT | DC | 20.10.2026
 $godina = 2026;
 ?>
 

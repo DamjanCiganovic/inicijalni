@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="hr">
-// TSD-4RT | inicijali | datum
+<!-- TSD-4RT | DC | 22.09.2026. -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,10 +24,10 @@
         <nav class="main-nav">
             <ul>
                 <li><a href="index.php">Početna</a></li>
-                <li><a href="o-nama.html">O nama</a></li>
+                <li><a href="o-nama.php">O nama</a></li>
                 <li><a href="usluge.php">Usluge</a></li>
                 <li><a href="kontakt.php">Kontakt</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="blog.php">Blog</a></li>
             </ul>
         </nav>
 

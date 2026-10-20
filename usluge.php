@@ -3,7 +3,7 @@ $naslovStranice = "Usluge";
 include 'zaglavlje.php';
 ?>
 <!DOCTYPE html>
-<!-- TSD-4RT | AB | 22.09.2026. -->
+<!-- TSD-4RT | DC | 22.09.2026. -->
 <html lang="hr">
 <head>
     <meta charset="UTF-8">
@@ -14,24 +14,11 @@ include 'zaglavlje.php';
 </head>
 <body>
 
-    <!-- ZAGLAVLJE -->
-    <header class="main-header">
-        <div class="header-container">
-            <a href="index.html" class="logo">
-                <i class="fas fa-shield-halved"></i>
-                <span>Aegis Security</span>
-            </a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Početna</a></li>
-                    <li><a href="o-nama.html">O nama</a></li>
-                    <li><a href="usluge.html" class="active">Usluge i Cjenik</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="kontakt.html">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<?php
+// TSD-4RT | DC | 20.10.2026
+$naslovStranice = "Kontakt";
+include 'zaglavlje.php';
+?>
 
     <main class="main-content">
         <!-- HERO SEKCIJA -->
@@ -189,66 +176,8 @@ include 'zaglavlje.php';
         </section>
     </main>
 
-    <!-- PODNOŽJE -->
-    <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <a href="index.html" class="footer-logo">
-                        <i class="fas fa-shield-halved"></i>
-                        <span>Aegis Security</span>
-                    </a>
-                    <p>Proaktivna zaštita i savjetovanje u informacijskoj sigurnosti za moderno poslovanje.</p>
-                </div>
-
-                <?php
-$usluge = [
-    "Zaštita objekata" => 150,
-    "Video nadzor" => 200,
-    "Alarmni sustavi" => 100
-];
-?>
-
-<ul>
-    <?php foreach ($usluge as $naziv => $cijena): ?>
-        <li>
-            <?= htmlspecialchars($naziv) ?> -
-            <?= $cijena ?> €
-        </li>
-    <?php endforeach; ?>
-</ul>
-
-                <div class="footer-links">
-                    <div class="footer-col">
-                        <span class="footer-heading">Navigacija</span>
-                        <ul>
-                            <li><a href="o-nama.html">O nama</a></li>
-                            <li><a href="usluge.html">Usluge i cjenik</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="kontakt.html">Kontakt</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <span class="footer-heading">Pravno</span>
-                        <ul>
-                            <li><a href="#">Privatnost</a></li>
-                            <li><a href="#">Uvjeti korištenja</a></li>
-                            <li><a href="#">Kolačići</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Aegis Security d.o.o. Sva prava pridržana.</p>
-                <div class="footer-socials">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
-                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    
+    <?php include 'podnozje.php'; ?>
 
 </body>
 </html>
-<?php include 'podnozje.php'; ?>

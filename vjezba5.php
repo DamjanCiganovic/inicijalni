@@ -1,5 +1,5 @@
 <?php
-// TSD-4RT | tvoji inicijali | 13.10.2026.
+// TSD-4RT | DC | 13.10.2026.
 $cijena = 450;
 echo $cijena . "<br>";
 var_dump($cijena);
