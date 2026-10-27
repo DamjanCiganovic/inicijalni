@@ -16,3 +16,17 @@ var_dump("5" . 3);
 echo "<br>";
 var_dump(17 % 5);
 echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+
+
+
+
+$minute = 135;
+$sati = intdiv($minute, 60);
+$preostaleMinute = $minute % 60;
+
+echo $sati . " h " . $preostaleMinute . " min";
+?>
