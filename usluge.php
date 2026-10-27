@@ -4,16 +4,20 @@ include 'zaglavlje.php';
 
 const PDV = 0.25;
 
+// Usluge, cijene i opisi dulji od 40 znakova
 $nazivProcjena = "Procjena rizika";
 $cijenaProcjenaRizika = 450;
+$opisProcjena = "Detaljna procjena svih potencijalnih sigurnosnih rizika i ranjivosti sustava.";
 
 $nazivAnaliza = "Sigurnosna analiza";
 $cijenaSigurnosnaAnaliza = 1280;
+$opisAnaliza = "Sveobuhvatna analiza mrežne infrastrukture i sigurnosnih protokola tvrtke.";
 
 $nazivEdukacija = "Edukacija zaposlenika";
 $cijenaEdukacijaZaposlenika = 300;
+$opisEdukacija = "Interaktivne radionice i simulacije za podizanje svijesti zaposlenika o cyber prijetnjama.";
 
-
+// Izračuni PDV-a i ukupnih cijena
 $pdvProcjena = $cijenaProcjenaRizika * PDV;
 $ukupnoProcjena = $cijenaProcjenaRizika + $pdvProcjena;
 
@@ -22,6 +26,11 @@ $ukupnoAnaliza = $cijenaSigurnosnaAnaliza + $pdvAnaliza;
 
 $pdvEdukacija = $cijenaEdukacijaZaposlenika * PDV;
 $ukupnoEdukacija = $cijenaEdukacijaZaposlenika + $pdvEdukacija;
+
+// Izračun za članove (-15%, zaokruženo na cijeli euro)
+$clanoviProcjena = round($ukupnoProcjena * 0.85);
+$clanoviAnaliza = round($ukupnoAnaliza * 0.85);
+$clanoviEdukacija = round($ukupnoEdukacija * 0.85);
 ?>
 <!DOCTYPE html>
 <!-- TSD-4RT | DC | 22.09.2026. -->
@@ -36,57 +45,67 @@ $ukupnoEdukacija = $cijenaEdukacijaZaposlenika + $pdvEdukacija;
 <body>
 
     <main class="main-content">
-      
+        
+        <!-- Hero Sekcija -->
         <section class="pricing-hero">
             <span class="badge">Fleksibilni Paketi Zaštite</span>
             <h1>Sigurnosna rješenja prilagođena vašem poslovanju</h1>
             <p>Odaberite paket koji odgovara potrebama i veličini vašeg tima. Transparentni uvjeti bez skrivenih troškova.</p>
         </section>
 
-     
+        <!-- Tablica s cijenama i opisima -->
         <section class="pricing-section">
             <h2 class="text-center">Pregled cijena usluga</h2>
-            <div style="max-width: 800px; margin: 0 auto; overflow-x: auto;">
-                <table style="width: 100%; border-collapse: collapse; margin-top: 20px; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden;">
+            <div class="table-responsive">
+                <table class="custom-table">
                     <thead>
-                        <tr style="background-color: #1e293b; color: #fff; text-align: left;">
-                            <th style="padding: 12px 16px;">Usluga</th>
-                            <th style="padding: 12px 16px; text-align: right;">Bez PDV-a</th>
-                            <th style="padding: 12px 16px; text-align: right;">PDV (25%)</th>
-                            <th style="padding: 12px 16px; text-align: right;">Ukupno</th>
+                        <tr>
+                            <th>Usluga</th>
+                            <th>Opis</th>
+                            <th class="text-right">Bez PDV-a</th>
+                            <th class="text-right">PDV (25%)</th>
+                            <th class="text-right">Ukupno</th>
+                            <th class="text-right">Za članove (-15%)</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style="border-bottom: 1px solid #e2e8f0;">
-                            <td style="padding: 12px 16px;"><?php echo $nazivProcjena; ?></td>
-                            <td style="padding: 12px 16px; text-align: right;"><?php echo number_format($cijenaProcjenaRizika, 2, ',', '.'); ?> €</td>
-                            <td style="padding: 12px 16px; text-align: right;"><?php echo number_format($pdvProcjena, 2, ',', '.'); ?> €</td>
-                            <td style="padding: 12px 16px; text-align: right; font-weight: bold;"><?php echo number_format($ukupnoProcjena, 2, ',', '.'); ?> €</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #e2e8f0;">
-                            <td style="padding: 12px 16px;"><?php echo $nazivAnaliza; ?></td>
-                            <td style="padding: 12px 16px; text-align: right;"><?php echo number_format($cijenaSigurnosnaAnaliza, 2, ',', '.'); ?> €</td>
-                            <td style="padding: 12px 16px; text-align: right;"><?php echo number_format($pdvAnaliza, 2, ',', '.'); ?> €</td>
-                            <td style="padding: 12px 16px; text-align: right; font-weight: bold;"><?php echo number_format($ukupnoAnaliza, 2, ',', '.'); ?> €</td>
+                        <tr>
+                            <td><?php echo $nazivProcjena; ?></td>
+                            <td><?php echo mb_substr($opisProcjena, 0, 40) . '...'; ?></td>
+                            <td class="text-right"><?php echo number_format($cijenaProcjenaRizika, 2, ',', '.'); ?> €</td>
+                            <td class="text-right"><?php echo number_format($pdvProcjena, 2, ',', '.'); ?> €</td>
+                            <td class="text-right font-bold"><?php echo number_format($ukupnoProcjena, 2, ',', '.'); ?> €</td>
+                            <td class="text-right text-success-custom"><?php echo number_format($clanoviProcjena, 2, ',', '.'); ?> €</td>
                         </tr>
                         <tr>
-                            <td style="padding: 12px 16px;"><?php echo $nazivEdukacija; ?></td>
-                            <td style="padding: 12px 16px; text-align: right;"><?php echo number_format($cijenaEdukacijaZaposlenika, 2, ',', '.'); ?> €</td>
-                            <td style="padding: 12px 16px; text-align: right;"><?php echo number_format($pdvEdukacija, 2, ',', '.'); ?> €</td>
-                            <td style="padding: 12px 16px; text-align: right; font-weight: bold;"><?php echo number_format($ukupnoEdukacija, 2, ',', '.'); ?> €</td>
+                            <td><?php echo $nazivAnaliza; ?></td>
+                            <td><?php echo mb_substr($opisAnaliza, 0, 40) . '...'; ?></td>
+                            <td class="text-right"><?php echo number_format($cijenaSigurnosnaAnaliza, 2, ',', '.'); ?> €</td>
+                            <td class="text-right"><?php echo number_format($pdvAnaliza, 2, ',', '.'); ?> €</td>
+                            <td class="text-right font-bold"><?php echo number_format($ukupnoAnaliza, 2, ',', '.'); ?> €</td>
+                            <td class="text-right text-success-custom"><?php echo number_format($clanoviAnaliza, 2, ',', '.'); ?> €</td>
+                        </tr>
+                        <tr>
+                            <td><?php echo $nazivEdukacija; ?></td>
+                            <td><?php echo mb_substr($opisEdukacija, 0, 40) . '...'; ?></td>
+                            <td class="text-right"><?php echo number_format($cijenaEdukacijaZaposlenika, 2, ',', '.'); ?> €</td>
+                            <td class="text-right"><?php echo number_format($pdvEdukacija, 2, ',', '.'); ?> €</td>
+                            <td class="text-right font-bold"><?php echo number_format($ukupnoEdukacija, 2, ',', '.'); ?> €</td>
+                            <td class="text-right text-success-custom"><?php echo number_format($clanoviEdukacija, 2, ',', '.'); ?> €</td>
                         </tr>
                     </tbody>
                 </table>
-                <p style="margin-top: 15px; font-style: italic; color: #64748b; text-align: right;">
+                <p class="table-date">
                     Cijene ažurirane: <?php echo date('d.m.Y.'); ?>
                 </p>
             </div>
         </section>
 
-        
+        <!-- Kartice s paketima (Tvoj dio) -->
         <section class="pricing-section">
             <div class="pricing-grid">
                 
+                <!-- Starter Shield -->
                 <div class="pricing-card">
                     <div class="card-header">
                         <div class="plan-icon"><i class="fas fa-user-shield"></i></div>
@@ -165,7 +184,7 @@ $ukupnoEdukacija = $cijenaEdukacijaZaposlenika + $pdvEdukacija;
             </div>
         </section>
 
-        <!-- ČESTA PITANJA (FAQ) -->
+        <!-- ČESTA PITANJA / FAQ (Tvoj dio) -->
         <section class="faq-section">
             <h2 class="text-center">Česta Pitanja (FAQ)</h2>
             <div class="faq-container">
@@ -183,6 +202,7 @@ $ukupnoEdukacija = $cijenaEdukacijaZaposlenika + $pdvEdukacija;
                 </div>
             </div>
         </section>
+
     </main>
 
     <?php include 'podnozje.php'; ?>
