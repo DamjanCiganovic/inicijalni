@@ -30,3 +30,25 @@ $preostaleMinute = $minute % 60;
 
 echo $sati . " h " . $preostaleMinute . " min";
 ?>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<?php
+$nazivTvrtke = "Aegisč Security"; 
+
+echo strlen($nazivTvrtke); 
+echo "<br>";
+
+echo mb_strlen($nazivTvrtke); 
+echo "<br>";
+
+echo strtoupper($nazivTvrtke);
+echo "<br>";
+
+echo mb_strtoupper($nazivTvrtke);
+echo "<br>";
+
+?>

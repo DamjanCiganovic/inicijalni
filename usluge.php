@@ -1,6 +1,27 @@
 <?php
 $naslovStranice = "Usluge";
 include 'zaglavlje.php';
+
+const PDV = 0.25;
+
+$nazivProcjena = "Procjena rizika";
+$cijenaProcjenaRizika = 450;
+
+$nazivAnaliza = "Sigurnosna analiza";
+$cijenaSigurnosnaAnaliza = 1280;
+
+$nazivEdukacija = "Edukacija zaposlenika";
+$cijenaEdukacijaZaposlenika = 300;
+
+
+$pdvProcjena = $cijenaProcjenaRizika * PDV;
+$ukupnoProcjena = $cijenaProcjenaRizika + $pdvProcjena;
+
+$pdvAnaliza = $cijenaSigurnosnaAnaliza * PDV;
+$ukupnoAnaliza = $cijenaSigurnosnaAnaliza + $pdvAnaliza;
+
+$pdvEdukacija = $cijenaEdukacijaZaposlenika * PDV;
+$ukupnoEdukacija = $cijenaEdukacijaZaposlenika + $pdvEdukacija;
 ?>
 <!DOCTYPE html>
 <!-- TSD-4RT | DC | 22.09.2026. -->
@@ -14,25 +35,58 @@ include 'zaglavlje.php';
 </head>
 <body>
 
-<?php
-// TSD-4RT | DC | 20.10.2026
-$naslovStranice = "Kontakt";
-include 'zaglavlje.php';
-?>
-
     <main class="main-content">
-        <!-- HERO SEKCIJA -->
+      
         <section class="pricing-hero">
             <span class="badge">Fleksibilni Paketi Zaštite</span>
             <h1>Sigurnosna rješenja prilagođena vašem poslovanju</h1>
             <p>Odaberite paket koji odgovara potrebama i veličini vašeg tima. Transparentni uvjeti bez skrivenih troškova.</p>
         </section>
 
-        <!-- GLAVNI CJENIK -->
+     
+        <section class="pricing-section">
+            <h2 class="text-center">Pregled cijena usluga</h2>
+            <div style="max-width: 800px; margin: 0 auto; overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; margin-top: 20px; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden;">
+                    <thead>
+                        <tr style="background-color: #1e293b; color: #fff; text-align: left;">
+                            <th style="padding: 12px 16px;">Usluga</th>
+                            <th style="padding: 12px 16px; text-align: right;">Bez PDV-a</th>
+                            <th style="padding: 12px 16px; text-align: right;">PDV (25%)</th>
+                            <th style="padding: 12px 16px; text-align: right;">Ukupno</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 12px 16px;"><?php echo $nazivProcjena; ?></td>
+                            <td style="padding: 12px 16px; text-align: right;"><?php echo number_format($cijenaProcjenaRizika, 2, ',', '.'); ?> €</td>
+                            <td style="padding: 12px 16px; text-align: right;"><?php echo number_format($pdvProcjena, 2, ',', '.'); ?> €</td>
+                            <td style="padding: 12px 16px; text-align: right; font-weight: bold;"><?php echo number_format($ukupnoProcjena, 2, ',', '.'); ?> €</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                            <td style="padding: 12px 16px;"><?php echo $nazivAnaliza; ?></td>
+                            <td style="padding: 12px 16px; text-align: right;"><?php echo number_format($cijenaSigurnosnaAnaliza, 2, ',', '.'); ?> €</td>
+                            <td style="padding: 12px 16px; text-align: right;"><?php echo number_format($pdvAnaliza, 2, ',', '.'); ?> €</td>
+                            <td style="padding: 12px 16px; text-align: right; font-weight: bold;"><?php echo number_format($ukupnoAnaliza, 2, ',', '.'); ?> €</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px 16px;"><?php echo $nazivEdukacija; ?></td>
+                            <td style="padding: 12px 16px; text-align: right;"><?php echo number_format($cijenaEdukacijaZaposlenika, 2, ',', '.'); ?> €</td>
+                            <td style="padding: 12px 16px; text-align: right;"><?php echo number_format($pdvEdukacija, 2, ',', '.'); ?> €</td>
+                            <td style="padding: 12px 16px; text-align: right; font-weight: bold;"><?php echo number_format($ukupnoEdukacija, 2, ',', '.'); ?> €</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 15px; font-style: italic; color: #64748b; text-align: right;">
+                    Cijene ažurirane: <?php echo date('d.m.Y.'); ?>
+                </p>
+            </div>
+        </section>
+
+        
         <section class="pricing-section">
             <div class="pricing-grid">
-
-                <!-- Starter Paket -->
+                
                 <div class="pricing-card">
                     <div class="card-header">
                         <div class="plan-icon"><i class="fas fa-user-shield"></i></div>
@@ -108,51 +162,6 @@ include 'zaglavlje.php';
                         <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
-
-            </div>
-        </section>
-
-        <!-- DODATNE USLUGE (ADD-ONS) -->
-        <section class="addons-section">
-            <h2 class="text-center">Dodatne Pojedinačne Usluge</h2>
-            <p class="section-subtitle text-center">Trebate li samo jednokratnu uslugu ili specifični revizijski pregled?</p>
-            
-            <div class="addons-grid">
-                <div class="addon-box">
-                    <div class="addon-icon"><i class="fas fa-bug"></i></div>
-                    <div class="addon-info">
-                        <h4>Jednokratni Penetracijski Test</h4>
-                        <p>Dubinska analiza vaših aplikacija i mreže s detaljnim izvješćem o ranjivostima.</p>
-                    </div>
-                    <div class="addon-price">Od €800</div>
-                </div>
-
-                <div class="addon-box">
-                    <div class="addon-icon"><i class="fas fa-certificate"></i></div>
-                    <div class="addon-info">
-                        <h4>NIS2 i ISO 27001 Priprema</h4>
-                        <p>Usklađivanje poslovanja s novim europskim regulativama i standardima sigurnosti.</p>
-                    </div>
-                    <div class="addon-price">Od €1.200</div>
-                </div>
-
-                <div class="addon-box">
-                    <div class="addon-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <div class="addon-info">
-                        <h4>Radionice i Edukacije Zaposlenika</h4>
-                        <p>Simulacije phishing napada i interaktivna obuka vašeg tima o cyber sigurnosti.</p>
-                    </div>
-                    <div class="addon-price">Od €450</div>
-                </div>
-
-                <div class="addon-box">
-                    <div class="addon-icon"><i class="fas fa-code"></i></div>
-                    <div class="addon-info">
-                        <h4>Sigurnosna Revizija Koda</h4>
-                        <p>Pregled izvornog koda aplikacije u potrazi za OWASP i logičkim ranjivostima.</p>
-                    </div>
-                    <div class="addon-price">Od €950</div>
-                </div>
             </div>
         </section>
 
@@ -176,7 +185,6 @@ include 'zaglavlje.php';
         </section>
     </main>
 
-    
     <?php include 'podnozje.php'; ?>
 
 </body>
